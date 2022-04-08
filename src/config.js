@@ -4,9 +4,10 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 
 const network = NETWORK.eth;
 
-// General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
+// General metadata for Ethereum 
+// TODO: metadata from opensea
+const namePrefix = "Authentic Bongo Cat NFT";
+const description = "A collection of Hand-Drawn Cute Bongo Cat NFTs";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
@@ -22,17 +23,20 @@ const solanaMetadata = {
 };
 
 // If you have selected Solana then the collection starts from 0 automatically
+// Image Weight / Raritiy is decending. Default #1
+// example: 
+// layers/background/black#1000.png -> Most common
+// layers/background/white#2.png -> Rarest
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
-    layersOrder: [
+    growEditionSizeTo: 25, // TODO: number of generated nft
+    layersOrder: [ // TODO: replace with folder name in layers
       { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Body" },
+      { name: "Eye" },
+      { name: "LeftPaw" },
+      { name: "RightPaw" },
+      { name: "Mouth" },
     ],
   },
 ];
